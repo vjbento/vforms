@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<script src="vForm.js"></script>
+</head>
+<body>
+	<div id="formulario">
+		<label for="alfabeto">Alfabeto</label>
+		<input type="radio" name="alfabeto" value="A">A
+		<input type="radio" name="alfabeto" value="B">B
+		<input type="radio" name="alfabeto" value="C">C
+		<br><br>
+		<label for="opcoes">Opções</label>
+		<select id="opcoes">
+			<option value="o1">Opção 1</option>
+			<option value="o2">Opção 2</option>
+			<option value="o3">Opção 3</option>
+		</select>
+		<br><br>
+		<label for="Nome">Nome</label>
+		<input type="text" id="nome">
+		<br><br>
+		<label for="numeros">Números</label>
+		<input id="numero_1" type="checkbox">1
+		<input id="numero_2" type="checkbox">2
+		<input id="numero_3" type="checkbox">3
+		<br><br>
+		<textarea id="perfil"></textarea><br><br>
+		<input type="button" value="Apagar Campos" onclick="formulario.clear();">
+	</div>
+	<script type="text/javascript">
+		var formulario = new vForm("formulario");
+
+		var dados = {
+			alfabeto: "B",
+			opcoes: "o2",
+			nome: "Victor José Bento",
+			numero_1: true,
+			numero_2: false,
+			numero_3: true,
+			perfil: "Perfil do Victor"
+		};
+
+		var dadosSelect = [
+			{ Valor: "o1", Texto: "Opção 1" },
+			{ Valor: "o2", Texto: "Opção 2" },
+			{ Valor: "o2", Texto: "Opção 3" }
+		];
+
+		formulario.loadData(dados);
+
+		formulario.focus("nome");
+	</script>
+</body>
+</html>
